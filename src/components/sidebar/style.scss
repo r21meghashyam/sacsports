@@ -1,0 +1,160 @@
+@import '~style/helpers';
+.sidebar{
+	position: fixed;
+	height: 100%;
+	top:0px;
+	bottom:0px;
+	overflow: auto;
+	background: #333;
+	z-index: 2;
+	box-shadow: 1px 1px 5px #333;
+	color:#FFF;
+	width:250px;
+	transition: width 1s, margin-left 1s;
+	img{
+		vertical-align: top;
+	}
+	.nav{
+		
+		
+		label{
+			color:#999;
+			font-size:12px;
+		}
+		label,i{
+			margin-left:20px;
+		}
+		a{
+			color:#FFF;
+			text-decoration: none;
+			i{
+				font-size:16px;
+				vertical-align: top;
+				margin-right:10px;
+				font-weight: 900;
+			}
+		}
+		ul{
+			list-style-type: none;
+			padding:0px;
+			margin-bottom:50px;
+			
+		}
+		li{
+			padding:10px 0px;
+			transition: color 0.2s,background 0.2s;
+			&:hover{
+				background:#999;
+				color:#333;
+			}
+			&.active{
+				background:#f5f5f5;
+				color:#333;
+			}
+		}
+		.sidebarTogglingArrow{
+			position: fixed;
+			background: #999;
+			width:250px;
+			transition: width 1s;
+			bottom:0px;
+			padding: 10px 0px;
+			cursor:pointer;
+			i{
+				float: right;
+				transition:transform 2s ease;
+				
+			}
+		}
+		span,label{
+			display: inline-block;
+			font-size:16px;
+			
+			transition: font-size 1s;
+			
+		}
+		label{
+			font-size:12px;
+		}
+		
+	
+	}
+	
+	
+	@media (min-width: $mobile-max) {
+		&.shrink{
+		
+			width:50px!important;
+			.nav{
+				span,label,li{
+					font-size: 0px;
+				}
+				.sidebarTogglingArrow{
+					width:50px;
+					i{
+						transform: rotateY(180deg);
+					}
+				}
+			}
+			
+		}
+	}
+	@media (max-width: $mobile-max) {
+		&.hide{
+			margin-left:-250px;
+		}
+	}
+	
+}
+
+.header {
+	
+	overflow: hidden;
+	
+
+	height: 50px;
+	
+	a{
+		text-decoration: none;
+		color:#FFF;
+		&:hover{
+			color:#FFF;
+		}
+	}
+	i{
+		padding:5px;
+		font-size:24px;
+	}
+	span {
+		
+		margin: 0;
+		margin-left:20px;
+		font-size: 24px;
+		line-height: 56px;
+		font-weight: 400;
+		
+		i{
+			padding: 10px;
+			background: #335886;
+			line-height: 1.5;
+			display:none;
+		}
+		img{
+			width:32px;
+			position: relative;
+			margin-right:10px;
+    		top: 10px;
+		}
+	}
+
+	
+	
+
+
+}
+
+@media (min-width: $mobile-max) {
+	.sidebar{
+		z-index: 1;
+	}
+}

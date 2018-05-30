@@ -1,0 +1,12 @@
+@import '~style/helpers';
+.page{
+    
+    transition:margin-left 1s;
+    margin-top:50px;
+    @media (min-width: 800px) {
+        margin-left:50px;
+        &.marginLeft{
+            margin-left:250px; 
+        }
+    }
+}
